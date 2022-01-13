@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="stylesheet" href="/build/tailwind.css" />
+    <title>Welcome to Tailwind!</title>
+  </head>
+  <body class="antialiased">
+    <div class="min-h-screen bg-mercury-400 relative overflow-hidden">
+      <div class="flex flex-col flex-wrap prose mx-auto text-center my-4">
+        <h1 class="font-semibold tracking-wider mb-1 uppercase">
+          Illustrations
+        </h1>
+        <span class="font-medium text-gray-600"
+          >The art and musings of a disillusioned idealist.</span
+        >
+      </div>
+      <div
+        x-data="images"
+        class="grid p-2 mx-auto"
+        data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 220, "gutter": 10, "fitWidth": true }'
+      >
+        <template x-for="src in srcs">
+          <div class="grid-item">
+            <a href="#">
+              <div class="wrapper">
+                <div
+                  class="overview w-full items-center justify-center flex opacity-0 hover:opacity-100 flex-col h-full transition duration-300 z-10 absolute top-0 mx-auto bg-gray-600 bg-opacity-60"
+                >
+                  <p
+                    class="text-lg font-light text-white"
+                    x-text="src.author"
+                  ></p>
+                  <span class="text-gray-400">— view —</span>
+                </div>
+              </div>
+              <img
+                class="m-0"
+                :src="src.download_url"
+                :height="randomHeight() + 'px'"
+                :style="{height: randomHeight() + 'px'}"
+                width="220px"
+                alt="This is Picture"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </template>
+        <template x-for="src in srcs">
+          <div class="grid-item">
+            <a href="#">
+              <div class="wrapper">
+                <div
+                  class="overview w-full items-center justify-center flex opacity-0 hover:opacity-100 flex-col h-full transition duration-300 z-10 absolute top-0 mx-auto bg-gray-600 bg-opacity-60"
+                >
+                  <p
+                    class="text-lg font-light text-white"
+                    x-text="src.author"
+                  ></p>
+                  <span class="text-gray-400">— view —</span>
+                </div>
+              </div>
+              <img
+                class="m-0"
+                :src="src.download_url"
+                :height="randomHeight() + 'px'"
+                :style="{height: randomHeight() + 'px'}"
+                width="220px"
+                alt="This is Picture"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("images", () => ({
+          srcs: [],
+          async init() {
+            const randoms = [
+              {
+                id: "0",
+                author: "Alejandro Escamilla",
+                width: 5616,
+                height: 3744,
+                url: "https://unsplash.com/photos/yC-Yzbqy7PY",
+                download_url: "https://picsum.photos/id/1/400/500"
+              },
+              {
+                id: "1",
+                author: "Alejandro Escamilla",
+                width: 5616,
+                height: 3744,
+                url: "https://unsplash.com/photos/LNRyGwIJr5c",
+                download_url: "https://picsum.photos/id/2/400/500"
+              },
+              {
+                id: "10",
+                author: "Paul Jarvis",
+                width: 2500,
+                height: 1667,
+                url: "https://unsplash.com/photos/6J--NXulQCs",
+                download_url: "https://picsum.photos/id/3/400/500"
+              },
+              {
+                id: "100",
+                author: "Tina Rataj",
+                width: 2500,
+                height: 1656,
+                url: "https://unsplash.com/photos/pwaaqfoMibI",
+                download_url: "https://picsum.photos/id/4/400/500"
+              },
+              {
+                id: "1000",
+                author: "Lukas Budimaier",
+                width: 5626,
+                height: 3635,
+                url: "https://unsplash.com/photos/6cY-FvMlmkQ",
+                download_url: "https://picsum.photos/id/5/400/500"
+              },
+              {
+                id: "1001",
+                author: "Danielle MacInnes",
+                width: 5616,
+                height: 3744,
+                url: "https://unsplash.com/photos/1DkWWN1dr-s",
+                download_url: "https://picsum.photos/id/6/400/500"
+              },
+              {
+                id: "1002",
+                author: "NASA",
+                width: 4312,
+                height: 2868,
+                url: "https://unsplash.com/photos/6-jTZysYY_U",
+                download_url: "https://picsum.photos/id/7/400/500"
+              },
+              {
+                id: "1003",
+                author: "E+N Photographies",
+                width: 1181,
+                height: 1772,
+                url: "https://unsplash.com/photos/GYumuBnTqKc",
+                download_url: "https://picsum.photos/id/8/400/500"
+              },
+              {
+                id: "1004",
+                author: "Greg Rakozy",
+                width: 5616,
+                height: 3744,
+                url: "https://unsplash.com/photos/SSxIGsySh8o",
+                download_url: "https://picsum.photos/id/9/400/500"
+              },
+              {
+                id: "1005",
+                author: "Matthew Wiebe",
+                width: 5760,
+                height: 3840,
+                url: "https://unsplash.com/photos/tBtuxtLvAZs",
+                download_url: "https://picsum.photos/id/10/400/500"
+              },
+              {
+                id: "1006",
+                author: "Vladimir Kudinov",
+                width: 3000,
+                height: 2000,
+                url: "https://unsplash.com/photos/-wWRHIUklxM",
+                download_url: "https://picsum.photos/id/11/400/500"
+              },
+              {
+                id: "1008",
+                author: "Benjamin Combs",
+                width: 5616,
+                height: 3744,
+                url: "https://unsplash.com/photos/5L4XAgMSno0",
+                download_url: "https://picsum.photos/id/12/400/500"
+              },
+              {
+                id: "1009",
+                author: "Christopher Campbell",
+                width: 5000,
+                height: 7502,
+                url: "https://unsplash.com/photos/CMWRIzyMKZk",
+                download_url: "https://picsum.photos/id/13/400/500"
+              },
+              {
+                id: "101",
+                author: "Christian Bardenhorst",
+                width: 2621,
+                height: 1747,
+                url: "https://unsplash.com/photos/8lMhzUjD1Wk",
+                download_url: "https://picsum.photos/id/14/400/500"
+              },
+              {
+                id: "1010",
+                author: "Samantha Sophia",
+                width: 5184,
+                height: 3456,
+                url: "https://unsplash.com/photos/NaWKMlp3tVs",
+                download_url: "https://picsum.photos/id/15/400/500"
+              },
+              {
+                id: "1011",
+                author: "Roberto Nickson",
+                width: 5472,
+                height: 3648,
+                url: "https://unsplash.com/photos/7BjmDICVloE",
+                download_url: "https://picsum.photos/id/16/400/500"
+              },
+              {
+                id: "1012",
+                author: "Scott Webb",
+                width: 3973,
+                height: 2639,
+                url: "https://unsplash.com/photos/uAgLGG1WBd4",
+                download_url: "https://picsum.photos/id/17/400/500"
+              },
+              {
+                id: "1013",
+                author: "Cayton Heath",
+                width: 4256,
+                height: 2832,
+                url: "https://unsplash.com/photos/D8LcRLwZyPs",
+                download_url: "https://picsum.photos/id/18/400/500"
+              },
+              {
+                id: "1014",
+                author: "Oscar Keys",
+                width: 6016,
+                height: 4000,
+                url: "https://unsplash.com/photos/AmPRUnRb6N0",
+                download_url: "https://picsum.photos/id/19/400/500"
+              },
+              {
+                id: "1015",
+                author: "Alexey Topolyanskiy",
+                width: 6000,
+                height: 4000,
+                url: "https://unsplash.com/photos/-oWyJoSqBRM",
+                download_url: "https://picsum.photos/id/20/400/500"
+              },
+              {
+                id: "1016",
+                author: "Philippe Wuyts",
+                width: 3844,
+                height: 2563,
+                url: "https://unsplash.com/photos/_h7aBovKia4",
+                download_url: "https://picsum.photos/id/21/400/500"
+              },
+              {
+                id: "1018",
+                author: "Andrew Ridley",
+                width: 3914,
+                height: 2935,
+                url: "https://unsplash.com/photos/Kt5hRENuotI",
+                download_url: "https://picsum.photos/id/22/400/500"
+              },
+              {
+                id: "1019",
+                author: "Patrick Fore",
+                width: 5472,
+                height: 3648,
+                url: "https://unsplash.com/photos/V6s1cmE39XM",
+                download_url: "https://picsum.photos/id/23/400/500"
+              },
+              {
+                id: "102",
+                author: "Ben Moore",
+                width: 4320,
+                height: 3240,
+                url: "https://unsplash.com/photos/pJILiyPdrXI",
+                download_url: "https://picsum.photos/id/24/400/500"
+              },
+              {
+                id: "1020",
+                author: "Adam Willoughby-Knox",
+                width: 4288,
+                height: 2848,
+                url: "https://unsplash.com/photos/_snqARKTgoc",
+                download_url: "https://picsum.photos/id/25/400/500"
+              },
+              {
+                id: "1021",
+                author: "Frances Gunn",
+                width: 2048,
+                height: 1206,
+                url: "https://unsplash.com/photos/8BmNurlVR6M",
+                download_url: "https://picsum.photos/id/26/400/500"
+              },
+              {
+                id: "1022",
+                author: "Vashishtha Jogi",
+                width: 6000,
+                height: 3376,
+                url: "https://unsplash.com/photos/bClr95glx6k",
+                download_url: "https://picsum.photos/id/27/400/500"
+              },
+              {
+                id: "1023",
+                author: "William Hook",
+                width: 3955,
+                height: 2094,
+                url: "https://unsplash.com/photos/93Ep1dhTd2s",
+                download_url: "https://picsum.photos/id/28/400/500"
+              },
+              {
+                id: "1024",
+                author: "Niko Virtanen",
+                width: 1920,
+                height: 1280,
+                url: "https://nikovirtanen.com",
+                download_url: "https://picsum.photos/id/29/400/500"
+              },
+              {
+                id: "1025",
+                author: "Matthew Wiebe",
+                width: 4951,
+                height: 3301,
+                url: "https://unsplash.com/photos/U5rMrSI7Pn4",
+                download_url: "https://picsum.photos/id/30/400/500"
+              }
+            ];
+
+            this.srcs = randoms;
+          }
+        }));
+      });
+
+      function randomHeight() {
+        return Math.floor(Math.random() * (450 - 115 + 1)) + 115;
+      }
+    </script>
+    <script
+      src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"
+      defer
+    ></script>
+  </body>
+</html>
