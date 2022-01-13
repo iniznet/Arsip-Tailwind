@@ -1,6 +1,10 @@
 # Tailwind Masonry Layout
 
 A simple tailwind masonry layout with https://masonry.desandro.com/
+Main Library:
+- TailwindCSS
+- Alpine JS (For Demo Data)
+- Masonry by desandro
 
 To get started:
 
