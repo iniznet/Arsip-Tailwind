@@ -1,17 +1,10 @@
-# Tailwind CSS Playground
+# Tailwind Masonry Layout
 
-A simple starter project for playing around with Tailwind in a proper PostCSS environment.
+A simple tailwind masonry layout with https://masonry.desandro.com/
 
 To get started:
 
 1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/tailwindcss/playground.git tailwindcss-playground
-
-   cd tailwindcss-playground
-   ```
-
 2. Install the dependencies:
 
    ```bash
